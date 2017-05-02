@@ -1,0 +1,34 @@
+## Colorize the ls output.
+alias ls='ls -G'
+
+## Use a long listing format.
+alias l='ls -lh'
+alias ll='ls -lha'
+
+## get rid of command not found.
+alias cd..='cd ..'
+
+## a quick way to get out of current directory.
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+## Colorize the grep command output for ease of use (good for log files).
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# Stop after sending count ECHO_REQUEST packets.
+alias ping='ping -c 4'
+
+# Open a finder a the current location.
+alias f='open -a Finder ./'
+
+# Clean up Python projects.
+alias pyc='find . \( -name __pycache__ -o -name '*.pyc' \) -delete'
+
+# Git aliases.
+alias groot='cd $(git root)'
