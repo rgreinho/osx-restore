@@ -27,6 +27,11 @@ extras: ## Install extras from Github
 		done \
 	}
 
-setup: bash brew extras ## Full setup
+git: ## Configure git
+	git config --global alias.s status
+	git config --global alias.ls 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short'
+	git config --global alias.lsg 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short --graph'
+
+setup: bash brew extras git ## Full setup
 
 .PHONY: bash brew extras setup
