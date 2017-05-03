@@ -12,7 +12,7 @@ help: # Display help
 		}' $(MAKEFILE_LIST) | sort
 
 bash: ## Setup Bash
-	@ls bash | xargs -I {} echo ln -s ${PWD}/bash/{} ~/.{}
+	@ls bash | xargs -I {} ln -s ${PWD}/bash/{} ~/.{}
 
 brew: ## Install packages with Brew
 	@bash setup/brew.sh
