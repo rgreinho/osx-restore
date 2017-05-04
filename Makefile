@@ -32,6 +32,7 @@ git: ## Configure git
 	git config --global alias.s status
 	git config --global alias.ls 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short'
 	git config --global alias.lsg 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short --graph'
+	git config --global core.editor vim
 
 vim: ## Install and configure Vim SPF13
 	if [ -d "$(VIM_SPF13_HOME)" ]; then \
