@@ -19,6 +19,9 @@ brew: ## Install packages with Brew
 	@bash setup/brew.sh
 	@ln -s ${PWD}/bin/brew-cask-update.sh /usr/local/bin/brew-cask-update
 
+editorconfig: ## Configure EditorConfig
+	@ln -s ${PWD}/conf/editorconfig ~/.editorconfig
+
 extras: ## Install extras from Github
 	@{ \
 		mkdir -p $(SRC_DIR); \
@@ -42,6 +45,6 @@ vim: ## Install and configure Vim SPF13
 		sh <(curl https://j.mp/spf13-vim3 -L); \
 	fi
 
-setup: bash brew extras git vim ## Full setup
+setup: bash brew editorconfig extras git vim ## Full setup
 
-.PHONY: bash brew extras setup
+.PHONY: bash brew editorconfig extras git setup vim
