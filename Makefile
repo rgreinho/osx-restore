@@ -1,6 +1,6 @@
 # Misc.
 EXTRAS=nojhan/liquidprompt.git altercation/solarized.git tonsky/FiraCode.git
-SHELL = /bin/bash
+SHELL=/bin/bash
 VIM_SPF13_HOME=~/.spf13-vim-3
 SRC_DIR=/usr/local/src
 
@@ -13,21 +13,21 @@ help: # Display help
 		}' $(MAKEFILE_LIST) | sort
 
 bash: ## Setup Bash
-	@ls bash | xargs -I {} ln -s ${PWD}/bash/{} ~/.{}
+	@ls bash | xargs -I {} ln -sf ${PWD}/bash/{} ~/.{}
 
 brew: ## Install packages with Brew
 	@bash setup/brew.sh
-	@ln -s ${PWD}/bin/brew-cask-update.sh /usr/local/bin/brew-cask-update
+	@ln -sf ${PWD}/bin/brew-cask-update.sh /usr/local/bin/brew-cask-update
 
 editorconfig: ## Configure EditorConfig
-	@ln -s ${PWD}/conf/editorconfig ~/.editorconfig
+	@ln -sf ${PWD}/conf/editorconfig ~/.editorconfig
 
 extras: ## Install extras from Github
 	@{ \
 		mkdir -p $(SRC_DIR); \
 		cd $(SRC_DIR); \
 		for EXTRA in $(EXTRAS); do \
-			git clone "https://github.com/$$EXTRA"; \
+			git -C "$$(basename "$$EXTRA" .git)" pull  || git clone "https://github.com/$$EXTRA"; \
 		done \
 	}
 
