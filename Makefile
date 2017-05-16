@@ -1,7 +1,7 @@
 # Misc.
 EXTRAS=nojhan/liquidprompt.git altercation/solarized.git tonsky/FiraCode.git
 SHELL=/bin/bash
-VIM_SPF13_HOME=~/.spf13-vim-3
+VIM_SPF13_HOME=$$HOME/.spf13-vim-3
 SRC_DIR=/usr/local/src
 
 default: setup
@@ -32,18 +32,24 @@ extras: ## Install extras from Github
 	}
 
 git: ## Configure git
-	git config --global alias.s status
-	git config --global alias.ls 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short'
-	git config --global alias.lsg 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short --graph'
-	git config --global core.editor vim
+	@git config --global alias.s status
+	@git config --global alias.ls 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short'
+	@git config --global alias.lsg 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short --graph'
+	@git config --global core.editor vim
 
 vim: ## Install and configure Vim SPF13
-	if [ -d "$(VIM_SPF13_HOME)" ]; then \
-		git -C "$(VIM_SPF13_HOME)" pull 2>/dev/null; \
-		vim +BundleInstall! +BundleClean +q; \
-	else \
-		sh <(curl https://j.mp/spf13-vim3 -L); \
-	fi
+	@{ \
+		if [ -d "$(VIM_SPF13_HOME)/" ]; then \
+			git fetch; \
+			if ! git -C "$(VIM_SPF13_HOME)" diff --quiet remotes/origin/HEAD; then \
+				git -C "$(VIM_SPF13_HOME)" pull 2>/dev/null; \
+				vim +BundleInstall! +BundleClean +q!; \
+			fi \
+		else \
+			sh <(curl https://j.mp/spf13-vim3 -L); \
+		fi \
+	}
+
 
 setup: bash brew editorconfig extras git vim ## Full setup
 
