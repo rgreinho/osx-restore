@@ -7,6 +7,9 @@ brew --version || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.c
 # Get Homebrew-cask.
 brew tap caskroom/cask
 
+# Get the cask-upgrade command.
+brew tap buo/cask-upgrade
+
 # Install packages.
 brew update
 brew install \

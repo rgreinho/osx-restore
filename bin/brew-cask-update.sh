@@ -6,8 +6,9 @@ brew update
 brew upgrade
 
 # Upgrade the packages.
-brew cask list | xargs brew cask install
+brew cu -y
 
 # Clean up.
 brew cleanup
 brew cask cleanup
+brew cu --cleanup
