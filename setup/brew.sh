@@ -26,6 +26,7 @@ if ! brew update; then
     libffi \
     most \
     multitail \
+    nodejs \
     openssl \
     p7zip \
     pandoc \
@@ -52,6 +53,7 @@ if ! brew update; then
     Caskroom/cask/sweet-home3d \
     Caskroom/cask/vagrant \
     Caskroom/cask/virtualbox \
+    Caskroom/cask/virtualbox-extension-pack
     Caskroom/cask/vlc
 
   # Clean up.
