@@ -1,8 +1,9 @@
 # Misc.
-EXTRAS=nojhan/liquidprompt.git altercation/solarized.git tonsky/FiraCode.git
-SHELL=/bin/bash
-VIM_SPF13_HOME=$$HOME/.spf13-vim-3
-SRC_DIR=/usr/local/src
+EXTRAS = nojhan/liquidprompt.git altercation/solarized.git tonsky/FiraCode.git
+SHELL = /bin/bash
+VIM_SPF13_HOME = $$HOME/.spf13-vim-3
+SRC_DIR = /usr/local/src
+OSX_RESTORE_DIR = $(SRC_DIR)/osx-restore
 
 default: setup
 
@@ -15,7 +16,7 @@ help: # Display help
 bash: ## Setup Bash
 	@ls bash | xargs -I {} ln -sf ${PWD}/bash/{} ~/.{}
 
-brew: ## Install packages with Brew
+brew: init ## Install packages with Brew
 	@bash setup/brew.sh
 	@ln -sf ${PWD}/bin/brew-cask-update.sh /usr/local/bin/brew-cask-update
 
@@ -37,6 +38,11 @@ git: ## Configure git
 	@git config --global alias.lsg 'log --pretty=format:"%C(yellow)%h\ %Cgreen%ad%Cred%d\ %Creset%s%Cblue\ [%cn]" --decorate --date=short --graph'
 	@git config --global core.editor vim
 
+init: ## Initialize the setup
+	@brew --version || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	@brew update && brew install git
+	@git -C "${OSX_RESTORE_DIR}" pull  || git clone https://github.com/rgreinho/osx-restore.git "${OSX_RESTORE_DIR}"
+
 vim: ## Install and configure Vim SPF13
 	@{ \
 		if [ -d "$(VIM_SPF13_HOME)/" ]; then \
@@ -50,7 +56,6 @@ vim: ## Install and configure Vim SPF13
 		fi \
 	}
 
-
 setup: bash brew editorconfig extras git vim ## Full setup
 
-.PHONY: bash brew editorconfig extras git setup vim
+.PHONY: bash brew editorconfig extras git init setup vim
