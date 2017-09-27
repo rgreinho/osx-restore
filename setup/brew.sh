@@ -1,9 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-# Install brew.
-brew --version || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 # Get Homebrew-cask.
 brew tap caskroom/cask
 
