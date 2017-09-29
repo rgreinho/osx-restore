@@ -11,5 +11,7 @@ or
 ```
 cd $(mktemp -d) \
 && curl -O https://raw.githubusercontent.com/rgreinho/osx-restore/master/Makefile \
-&& make init
+&& make init \
+&& cd /usr/local/src/osx-restore \
+&& make
 ```
