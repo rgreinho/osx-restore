@@ -10,6 +10,6 @@ or
 
 ```
 cd $(mktemp -d) \
-&& wget https://raw.githubusercontent.com/rgreinho/osx-restore/master/Makefile \
+&& curl -O https://raw.githubusercontent.com/rgreinho/osx-restore/master/Makefile \
 && make init
 ```
