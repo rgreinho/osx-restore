@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Define variables.
+: ${OSXR_BREW_FORCE_INSTALL:=0}
+
 # Get Homebrew-cask.
 brew tap caskroom/cask
 
@@ -8,7 +11,7 @@ brew tap caskroom/cask
 brew tap buo/cask-upgrade
 
 # Install packages.
-if ! brew update; then
+if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew install \
     bash-completion \
     chromedriver \
@@ -50,7 +53,7 @@ if ! brew update; then
     Caskroom/cask/sweet-home3d \
     Caskroom/cask/vagrant \
     Caskroom/cask/virtualbox \
-    Caskroom/cask/virtualbox-extension-pack
+    Caskroom/cask/virtualbox-extension-pack \
     Caskroom/cask/vlc
 
   # Clean up.

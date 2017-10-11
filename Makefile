@@ -39,11 +39,7 @@ git: ## Configure git
 	@git config --global core.editor vim
 
 init: ## Initialize the setup
-	@xcode-select --install 2>/dev/null || True
-	@brew --version || /usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	@brew update && brew install git
-	@sudo mkdir -p $(SRC_DIR) && chown $${USER} $(SRC_DIR)
-	@git -C "$(OSX_RESTORE_DIR)" pull || git clone https://github.com/rgreinho/osx-restore.git "$(OSX_RESTORE_DIR)"
+	@bash setup/bootstrap.sh
 
 vim: ## Install and configure Vim SPF13
 	@{ \
