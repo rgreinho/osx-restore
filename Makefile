@@ -40,6 +40,7 @@ git: ## Configure git
 
 init: ## Initialize the setup
 	@bash setup/bootstrap.sh
+	OSXR_BREW_FORCE_INSTALL=1 $(MAKE) setup
 
 vim: ## Install and configure Vim SPF13
 	@{ \
