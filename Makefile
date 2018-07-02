@@ -1,5 +1,5 @@
 # Misc.
-EXTRAS = nojhan/liquidprompt.git altercation/solarized.git tonsky/FiraCode.git
+EXTRAS = altercation/solarized.git tonsky/FiraCode.git
 SHELL = /bin/bash
 VIM_SPF13_HOME = $$HOME/.spf13-vim-3
 SRC_DIR = /usr/local/src

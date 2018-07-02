@@ -14,6 +14,7 @@ brew tap buo/cask-upgrade
 if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew install \
     bash-completion \
+    brew-cask-completion \
     chromedriver \
     coreutils \
     docker-completion \
@@ -21,15 +22,21 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     geckodriver \
     git \
     git-extras \
+    glide \
+    go \
+    htop \
     hub \
+    imagemagick \
     jq \
     libffi \
+    liquidprompt \
     most \
     multitail \
-    nodejs \
+    node@8 \
     openssl \
     p7zip \
     pandoc \
+    pip-completion \
     python3 \
     ruby \
     shellcheck \
@@ -38,23 +45,27 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     vim \
     wget \
     xz \
-    Caskroom/cask/atom \
-    Caskroom/cask/calibre \
-    Caskroom/cask/docker \
-    Caskroom/cask/etcher \
-    Caskroom/cask/firefox \
-    Caskroom/cask/flux \
-    Caskroom/cask/google-chrome \
-    Caskroom/cask/iterm2 \
-    Caskroom/cask/java \
-    Caskroom/cask/libreoffice \
-    Caskroom/cask/ngrok \
-    Caskroom/cask/spectacle \
-    Caskroom/cask/sweet-home3d \
-    Caskroom/cask/vagrant \
-    Caskroom/cask/virtualbox \
-    Caskroom/cask/virtualbox-extension-pack \
-    Caskroom/cask/vlc
+    yarn
+  
+  # Install cask formulas.
+  brew cask install \
+    atom \
+    docker \
+    etcher \
+    firefox \
+    flux \
+    google-chrome \
+    iterm2 \
+    java \
+    libreoffice \
+    ngrok \
+    spectacle \
+    slack \
+    sweet-home3d \
+    vagrant \
+    virtualbox \
+    virtualbox-extension-pack \
+    vlc
 
   # Clean up.
   brew cleanup

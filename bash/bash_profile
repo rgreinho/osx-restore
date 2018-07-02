@@ -1,6 +1,9 @@
 # Use the system config if it exists.
 [ -f /etc/bashrc ] && . /etc/bashrc
 
+# Use local Bash config if any.
+[ -f ~/.bashrc ] && . ~/.bashrc
+
 # Use Bash completion, if installed.
 [ -f /etc/bash_completion ]&& . /etc/bash_completion
 [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
@@ -16,7 +19,7 @@
 [ -f ~/.bash_secrets ] && . ~/.bash_secrets
 
 # Use Liquid Prompt.
-export LP_PATH_LENGTH=35
+export LP_PATH_LENGTH=20
 source /usr/local/src/liquidprompt/liquidprompt
 # If you have your own config for Liquid Prompt, edit and uncomment this line:
 # source /path/to/liquidpromptrc
@@ -25,3 +28,9 @@ source /usr/local/src/liquidprompt/liquidprompt
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+# Set Go variables.
+if go version; then
+  export GOPATH=$(go env GOPATH)
+  export PATH=$PATH:$(go env GOPATH)/bin
+fi
