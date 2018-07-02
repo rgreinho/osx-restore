@@ -19,5 +19,5 @@ brew --version || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.c
 brew update && brew install git
 
 # Prepare ${OSX_RESTORE_DIR} and clone osx-restore.
-sudo mkdir -p "${SRC_DIR}" && sudo chown "${USER}" "${SRC_DIR}"
+sudo mkdir -p "${OSX_RESTORE_DIR}" && sudo chown "${USER}" "${SRC_DIR}"
 git -C "${OSX_RESTORE_DIR}" pull || git clone git@github.com:rgreinho/osx-restore.git
