@@ -30,7 +30,7 @@ export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # Set Go variables.
-if go version; then
+if go version >/dev/null 2>&1; then
   export GOPATH=$(go env GOPATH)
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
