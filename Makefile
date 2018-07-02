@@ -16,7 +16,7 @@ help: # Display help
 bash: ## Setup Bash
 	@ls bash | xargs -I {} ln -sf ${PWD}/bash/{} ~/.{}
 
-brew: init ## Install packages with Brew
+brew: ## Install packages with Brew
 	@bash setup/brew.sh
 	@ln -sf ${PWD}/bin/brew-cask-update.sh /usr/local/bin/brew-cask-update
 
@@ -39,8 +39,8 @@ git: ## Configure git
 	@git config --global core.editor vim
 
 init: ## Initialize the setup
-	@bash setup/bootstrap.sh
-	OSXR_BREW_FORCE_INSTALL=1 $(MAKE) setup
+	export OSXR_BREW_FORCE_INSTALL=1 \
+		&& bash setup/bootstrap.sh
 
 vim: ## Install and configure Vim SPF13
 	@{ \
@@ -55,6 +55,6 @@ vim: ## Install and configure Vim SPF13
 		fi \
 	}
 
-setup: bash brew editorconfig extras git vim ## Full setup
+setup: init bash brew editorconfig extras git vim ## Full setup
 
 .PHONY: bash brew editorconfig extras git init setup vim

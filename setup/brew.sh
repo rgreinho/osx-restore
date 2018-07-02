@@ -15,7 +15,6 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew install \
     bash-completion \
     brew-cask-completion \
-    chromedriver \
     coreutils \
     docker-completion \
     editorconfig \
@@ -50,6 +49,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   # Install cask formulas.
   brew cask install \
     atom \
+    chromedriver \
     docker \
     etcher \
     firefox \
