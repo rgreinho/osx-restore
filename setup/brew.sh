@@ -108,23 +108,37 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   # Install cask formulas.
   brew cask install \
     atom \
+    calibre \
     chromedriver \
+    deluge \
     docker \
+    dropbox \
     etcher \
     firefox \
     flux \
+    gimp \
     google-chrome \
+    inkscape \
     iterm2 \
-    java \
+    java8 \
+    krita \
     libreoffice \
+    marp \
+    minikube \
     ngrok \
-    spectacle \
+    postman \
+    skype \
     slack \
+    spectacle \
     sweet-home3d \
     vagrant \
     virtualbox \
     virtualbox-extension-pack \
-    vlc
+    visual-studio-code \
+    vlc \
+    wireshark \
+    xquartz
+
 
   # Clean up.
   brew cleanup
