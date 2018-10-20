@@ -23,7 +23,7 @@ export LP_PATH_LENGTH=20
 # Load liquidprompt either from brew either from src.
 if [ -f /usr/local/share/liquidprompt ]; then
    . /usr/local/share/liquidprompt
-else 
+else
   [-f /usr/local/src/liquidprompt/liquidprompt ] && . /usr/local/src/liquidprompt/liquidprompt
 fi
 # If you have your own config for Liquid Prompt, edit and uncomment this line:
@@ -39,3 +39,11 @@ if go version >/dev/null 2>&1; then
   export GOPATH=$(go env GOPATH)
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
+
+# GitHub variables.
+export GITHUB_USER="rgreinho"
+export GITHUB_ORGANIZATION="request-yo-racks"
+
+# Python user site-packages.
+export PATH=$PATH:$(python3 -m site --user-base)/bin
+
