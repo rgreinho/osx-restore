@@ -10,5 +10,4 @@ brew cu -y
 
 # Clean up.
 brew cleanup
-brew cask cleanup
 brew cu --cleanup
