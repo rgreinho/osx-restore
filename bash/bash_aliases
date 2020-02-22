@@ -2,8 +2,8 @@
 alias ls='ls -G'
 
 ## Use a long listing format.
-alias l='ls -lh'
-alias ll='ls -lha'
+alias l='lsd -lh'
+alias ll='l -a'
 
 ## get rid of command not found.
 alias cd..='cd ..'
