@@ -42,8 +42,29 @@ fi
 
 # GitHub variables.
 export GITHUB_USER="rgreinho"
-export GITHUB_ORGANIZATION="request-yo-racks"
+# export GITHUB_ORGANIZATION="request-yo-racks"
 
+# Silence OSX Bash deprecation warning.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# BPython breakpoint
+export PYTHONBREAKPOINT=bpdb.set_trace
+
+# Use Node 12.
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+# Use Ruby 2.6.
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 # Python user site-packages.
 export PATH=$PATH:$(python3 -m site --user-base)/bin
+# Use Rust
+export PATH=$HOME/.cargo/bin:$PATH
 
+# Setup rvm.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Loads the Cartigan environment variables.
+export CGN_GLOBAL_CONFIG_DIR="${HOME}/.config/cartigan"
+[ -f "${CGN_GLOBAL_CONFIG_DIR}/bash-cartigan.sh" ] && . "${CGN_GLOBAL_CONFIG_DIR}/bash-cartigan.sh"
+
+
+export PATH="$HOME/.cargo/bin:$PATH"
