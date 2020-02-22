@@ -18,6 +18,9 @@
 # Use secrets if any (i.e. Github tokens).
 [ -f ~/.bash_secrets ] && . ~/.bash_secrets
 
+# Use specific variables for custom projects.
+[ -f ~/.bash_projects ] && . ~/.bash_projects
+
 # Use Liquid Prompt.
 export LP_PATH_LENGTH=20
 # Load liquidprompt either from brew either from src.
@@ -56,15 +59,17 @@ export PATH="/usr/local/opt/node@12/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 # Python user site-packages.
 export PATH=$PATH:$(python3 -m site --user-base)/bin
-# Use Rust
-export PATH=$HOME/.cargo/bin:$PATH
+# Use Python 3.8.
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+# Use Rust.
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Setup rvm.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# Loads the Cartigan environment variables.
-export CGN_GLOBAL_CONFIG_DIR="${HOME}/.config/cartigan"
-[ -f "${CGN_GLOBAL_CONFIG_DIR}/bash-cartigan.sh" ] && . "${CGN_GLOBAL_CONFIG_DIR}/bash-cartigan.sh"
-
-
-export PATH="$HOME/.cargo/bin:$PATH"
+# Setup Android SDK.
+if [ -d /usr/local/share/android-sdk  ]; then
+    export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+    export ANDROID_SDK="/Users/remy/Library/Android/sdk"
+    export PATH="$ANDROID_SDK/platform-tools:$PATH"
+fi
