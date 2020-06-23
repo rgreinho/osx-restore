@@ -269,9 +269,3 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew cleanup
   brew cask cleanup
 fi
-
---- BREW LIST ---
-
----
-
-
