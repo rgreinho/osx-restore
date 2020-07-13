@@ -5,12 +5,14 @@ set -euo pipefail
 : ${OSXR_BREW_FORCE_INSTALL:=0}
 
 # Get Homebrew-cask.
-brew tap caskroom/cask
+#brew tap homebrew/cask-cask
 
 # Get the cask-upgrade command.
 brew tap buo/cask-upgrade
 
 # Install packages.
+#brew install osxfuse
+brew cask install homebrew/cask-versions/adoptopenjdk8
 if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew install \
     adwaita-icon-theme \
@@ -26,13 +28,11 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     brew-cask-completion \
     c-ares \
     cairo \
-    chromedriver \
     cmake \
     coreutils \
     curl \
     dep \
     docker \
-    docker-completion \
     docker-compose \
     dos2unix \
     e2fsprogs \
@@ -65,10 +65,6 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     gnu-getopt \
     gnutls \
     go \
-    go-task \
-    gobject-introspection \
-    golangci-lint \
-    gometalinter \
     gradle \
     gradle-completion \
     graphite2 \
@@ -142,7 +138,6 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     lua@5.1 \
     lzo \
     makedepend \
-    md5sha1sum \
     minikube \
     most \
     multitail \
@@ -209,7 +204,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     tree \
     unbound \
     unixodbc \
-    utf8proc \ \
+    utf8proc \
     vagrant-completion \
     vala \
     vault \
@@ -234,13 +229,12 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     android-studio \
     angry-ip-scanner \
     brave-browser \
+    chromedriver \
     dbeaver-community \
     deluge \
     dropbox \
-    etcher \
     firefox \
     flux \
-    font-hack-nerd-font \
     gimp \
     iterm2 \
     java \
@@ -252,10 +246,8 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     postman \
     sketchup \
     skype \
-    slack \
     spectacle \
     sweet-home3d \
-    the-battle-for-wesnoth \
     time-out \
     vagrant \
     virtualbox \

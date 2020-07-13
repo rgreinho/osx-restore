@@ -20,4 +20,4 @@ brew update && brew install git
 
 # Prepare ${OSX_RESTORE_DIR} and clone osx-restore.
 sudo mkdir -p "${OSX_RESTORE_DIR}" && sudo chown "${USER}" "${SRC_DIR}"
-git -C "${OSX_RESTORE_DIR}" pull || git clone git@github.com:rgreinho/osx-restore.git
+git -C "${OSX_RESTORE_DIR}" pull || git clone https://github.com/rgreinho/osx-restore.git
