@@ -4,6 +4,12 @@
 # Use local Bash config if any.
 [ -f ~/.bashrc ] && . ~/.bashrc
 
+# Setup Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Setup Starship prompt
+eval "$(starship init bash)"
+
 # Use Bash completion, if installed.
 if type brew &>/dev/null; then
   HOMEBREW_PREFIX="$(brew --prefix)"
@@ -50,16 +56,12 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # BPython breakpoint
 export PYTHONBREAKPOINT=bpdb.set_trace
 
-# Use Node 12.
-export PATH="/usr/local/opt/node@12/bin:$PATH"
-# Use Ruby 2.6.
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 # Python user site-packages.
 export PATH=$PATH:$(python3 -m site --user-base)/bin
 # Use Python 3.9.
 export PATH="/usr/local/opt/python@3.9/bin:$PATH"
 # Use Rust.
-export PATH="$HOME/.cargo/bin:$PATH"
+[ -f  "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 # Use Terraform 0.13.
 export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
 
@@ -72,7 +74,3 @@ if [ -d /usr/local/share/android-sdk  ]; then
     export ANDROID_SDK="/Users/remy/Library/Android/sdk"
     export PATH="$ANDROID_SDK/platform-tools:$PATH"
 fi
-
-# Setup Starship prompt
-eval "$(starship init bash)"
-export PATH="/usr/local/sbin:$PATH"
