@@ -33,9 +33,14 @@ init: ## Initialize the setup
 	export OSXR_BREW_FORCE_INSTALL=1 \
 		&& bash setup/bootstrap.sh
 
-vim: ## Install and configure Vim SPF13
+startship: ## Configure Startship prompt
+	@mkdir -p ~/.config
+	@ln -sf ${PWD}/conf/startship.toml ~/.config/startship.toml
+
+
+vim: ## Install and configure Space Vim
 	curl -sLf https://spacevim.org/install.sh | bash
 
-setup: init bash brew editorconfig fonts git vim ## Full setup
+setup: init bash brew editorconfig fonts git ## Full setup
 
 .PHONY: bash brew editorconfig fonts git init setup vim

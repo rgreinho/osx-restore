@@ -1,0 +1,29 @@
+[aws]
+disabled = true
+
+[cmd_duration]
+min_time = 2000
+format = "⌛ [$duration]($style)"
+style = "bold yellow"
+
+[gcloud]
+disabled = true
+
+[package]
+disabled = true
+
+[python]
+python_binary = "python3"
+format = 'via [${symbol}(\($virtualenv\)) ]($style)'
+style = "fg:148"
+disabled = false
+
+[status]
+style = "bg:124 fg:white"
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
+disabled = false
+
+[terraform]
+disabled = false
+
