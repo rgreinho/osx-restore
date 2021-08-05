@@ -27,8 +27,5 @@ alias ping='ping -c 4'
 # Open a finder a the current location.
 alias f='open -a Finder ./'
 
-# Clean up Python projects.
-alias pyc='find . \( -name __pycache__ -o -name '*.pyc' \) -delete'
-
 # Git aliases.
 alias groot='cd $(git root)'

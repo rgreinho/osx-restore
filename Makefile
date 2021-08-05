@@ -33,10 +33,9 @@ init: ## Initialize the setup
 	export OSXR_BREW_FORCE_INSTALL=1 \
 		&& bash setup/bootstrap.sh
 
-startship: ## Configure Startship prompt
+starship: ## Configure Startship prompt
 	@mkdir -p ~/.config
 	@ln -sf ${PWD}/conf/startship.toml ~/.config/startship.toml
-
 
 vim: ## Install and configure Space Vim
 	curl -sLf https://spacevim.org/install.sh | bash
