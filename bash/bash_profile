@@ -28,22 +28,6 @@ fi
 # Use specific variables for custom projects.
 [ -f ~/.bash_projects ] && . ~/.bash_projects
 
-# Use Liquid Prompt.
-# export LP_PATH_LENGTH=20
-# Load liquidprompt either from brew either from src.
-# if [ -f /usr/local/share/liquidprompt ]; then
-#   . /usr/local/share/liquidprompt
-# else
-#  [-f /usr/local/src/liquidprompt/liquidprompt ] && . /usr/local/src/liquidprompt/liquidprompt
-# fi
-# If you have your own config for Liquid Prompt, edit and uncomment this line:
-# source /path/to/liquidpromptrc
-
-# Use virtualenv wrapper.
-# export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-# export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-# [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ] && . /usr/local/bin/virtualenvwrapper_lazy.sh
-
 # Use pyenv.
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -59,7 +43,6 @@ fi
 
 # GitHub variables.
 export GITHUB_USER="rgreinho"
-# export GITHUB_ORGANIZATION="request-yo-racks"
 
 # Silence OSX Bash deprecation warning.
 export BASH_SILENCE_DEPRECATION_WARNING=1
