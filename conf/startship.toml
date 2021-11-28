@@ -1,3 +1,66 @@
+format = """
+[╭ ](bold green)$username\
+$hostname\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$cobol\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$shell
+[╰❯](bold green)$status """
+
 [aws]
 disabled = true
 
@@ -20,10 +83,9 @@ disabled = false
 
 [status]
 style = "bg:124 fg:white"
-format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style)'
 map_symbol = true
 disabled = false
 
 [terraform]
 disabled = false
-
