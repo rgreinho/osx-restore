@@ -1,0 +1,84 @@
+
+# Setup Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Setup Starship prompt
+eval "$(starship init bash)"
+
+# Use Bash completion, if installed.
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
+
+# Use Bash aliases, if any.
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+
+# Use Bash functions, if any.
+[ -f ~/.bash_functions ] && . ~/.bash_functions
+
+# Use secrets if any (i.e. Github tokens).
+[ -f ~/.bash_secrets ] && . ~/.bash_secrets
+
+# Use specific variables for custom projects.
+[ -f ~/.bash_projects ] && . ~/.bash_projects
+
+# Use pyenv.
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
+
+# Use Python 3.11
+export PATH="$(brew --prefix)/opt/python@3.11/bin:$PATH"
+
+# Set Go variables.
+if go version >/dev/null 2>&1; then
+  export GOPATH=$(go env GOPATH)
+  export PATH=$PATH:$(go env GOPATH)/bin
+fi
+
+# GitHub variables.
+export GITHUB_USER="rgreinho"
+export GITSIGN_CONNECTOR_ID="https://github.com/login/oauth"
+
+# Silence OSX Bash deprecation warning.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Use Rust.
+[ -f  "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+# Enable cargo's sparse protocol.
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
+
+# Setup rvm.
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Setup Android SDK.
+#if [ -d /usr/local/share/android-sdk  ]; then
+#    export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+#    export ANDROID_SDK="/Users/remy/Library/Android/sdk"
+#    export PATH="$ANDROID_SDK/platform-tools:$PATH"
+#fi
+
+export PATH="/opt/local/bin:$PATH"
+export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl@3/lib/pkgconfig"
+export PATH="$(brew --prefix)/opt/openssl@3/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/private/tmp/plop/google-cloud-sdk/path.bash.inc' ]; then . '/private/tmp/plop/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/private/tmp/plop/google-cloud-sdk/completion.bash.inc' ]; then . '/private/tmp/plop/google-cloud-sdk/completion.bash.inc'; fi
+
+# NVM.
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
