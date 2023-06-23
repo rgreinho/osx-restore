@@ -29,3 +29,4 @@ alias f='open -a Finder ./'
 
 # Git aliases.
 alias groot='cd $(git root)'
+alias pcans='git cans && git push -f'
