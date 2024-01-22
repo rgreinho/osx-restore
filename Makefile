@@ -34,13 +34,13 @@ git: ## Configure git
 	@git config --global delta.features decorations
 	@git config --global delta.line-numbers true
 	@git config --global delta.interactive.keep-plus-minus-markers false
-    @git config --global delta.decorations.commit-decoration-style 'blue ol'
-    @git config --global delta.decorations.commit-style raw
-    @git config --global delta.decorations.file-style omit
-    @git config --global delta.decorations.hunk-header-decoration-style 'blue box'
-    @git config --global delta.decorations.hunk-header-file-style red
-    @git config --global delta.decorations.hunk-header-line-number-style '#067a00'
-    @git config --global delta.decorations.hunk-header-style 'file line-number syntax'
+	@git config --global delta.decorations.commit-decoration-style 'blue ol'
+	@git config --global delta.decorations.commit-style raw
+	@git config --global delta.decorations.file-style omit
+	@git config --global delta.decorations.hunk-header-decoration-style 'blue box'
+	@git config --global delta.decorations.hunk-header-file-style red
+	@git config --global delta.decorations.hunk-header-line-number-style '#067a00'
+	@git config --global delta.decorations.hunk-header-style 'file line-number syntax'
 	@git config --global commit.gpgsign true  # Sign all commits
 	@git config --global tag.gpgsign true  # Sign all tags
 	@git config --global gpg.x509.program gitsign  # Use Gitsign for signing
