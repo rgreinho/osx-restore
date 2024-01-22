@@ -8,23 +8,64 @@ set -euo pipefail
 if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew install \
     aom \
+    apache-arrow \
+    apr \
+    apr-util \
+    aribb24 \
+    asciidoc \
     autoconf \
     automake \
+    avr-binutils \
+    avr-gcc@9 \
+    avrdude \
+    aws-sdk-cpp \
     awscli \
     bash-completion \
     bat \
     bdw-gc \
     berkeley-db \
+    berkeley-db@5 \
+    boost \
+    bottom \
     brew-cask-completion \
     brotli \
+    bzip2 \
     c-ares \
+    ca-certificates \
     cairo \
+    capstone \
+    cargo-lambda \
+    cffi \
+    cfitsio \
+    cgal \
     chromedriver \
+    cjson \
+    cmake \
+    cmocka \
+    colima \
+    confuse \
     coreutils \
+    cosign \
+    crane \
+    cue \
+    cython \
+    dav1d \
+    dive \
+    docbook \
+    docbook-xsl \
     docker \
+    docker-completion \
+    docutils \
+    doxygen \
+    dtc \
+    dust \
     e2fsprogs \
     editorconfig \
+    eigen \
+    epsilon \
     exercism \
+    exif \
+    expat \
     fd \
     fetch \
     ffmpeg \
@@ -32,20 +73,30 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     fontconfig \
     freetds \
     freetype \
+    freexl \
     frei0r \
     fribidi \
+    gcc \
     gd \
+    gdal \
     gdbm \
     gdk-pixbuf \
     geckodriver \
+    geos \
     gettext \
+    gflags \
+    gh \
     ghostscript \
     giflib \
     git \
+    git-delta \
     git-extras \
     git-gui \
+    gitsign \
+    gitsign-credential-cache \
     gitui \
     glib \
+    glog \
     glooctl \
     gmp \
     gnu-getopt \
@@ -54,108 +105,191 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     go \
     gobject-introspection \
     golangci-lint \
+    gpgme \
     graphite2 \
     graphviz \
+    groff \
+    grpc \
+    grpc@1.54 \
     gts \
     guile \
     harfbuzz \
+    hdf5 \
     helm \
     helmfile \
+    hidapi \
+    highway \
     htop \
     hub \
     hugo \
+    hunspell \
+    hurl \
     icu4c \
     ilmbase \
     imagemagick \
     imath \
+    isl \
     jansson \
     jasper \
     jbig2dec \
     jemalloc \
     jenv \
     jpeg \
+    jpeg-turbo \
+    jpeg-xl \
     jq \
+    json-c \
+    jsoncpp \
+    just \
+    kdash \
+    keyring \
+    kind \
+    ko \
     krb5 \
     kubernetes-cli \
     kubernetes-helm \
+    kubie \
     lame \
     leptonica \
+    libaec \
+    libarchive \
     libass \
     libassuan \
+    libavif \
+    libb2 \
     libbluray \
+    libdap \
     libde265 \
     libev \
     libevent \
+    libexif \
     libffi \
+    libftdi \
     libgcrypt \
+    libgeotiff \
+    libgit2 \
+    libgit2@1.6 \
     libgpg-error \
     libheif \
     libidn \
     libidn2 \
+    libkml \
     libksba \
+    liblerc \
     liblqr \
     libmaxminddb \
+    libmicrohttpd \
+    libmpc \
+    libnghttp2 \
     libogg \
     libomp \
+    libpaper \
     libpng \
     libpq \
+    libpqxx \
     libpthread-stubs \
+    libpython-tabulate \
+    libraw \
+    librdkafka \
+    librist \
     librsvg \
+    librttopo \
     libsamplerate \
+    libslirp \
     libsmi \
     libsndfile \
     libsodium \
     libsoxr \
+    libspatialite \
     libssh \
     libssh2 \
     libtasn1 \
+    libtermkey \
     libtiff \
     libtool \
+    libunibreak \
     libunistring \
     libusb \
+    libusb-compat \
     libuv \
     libvidstab \
+    libvmaf \
     libvorbis \
     libvpx \
+    libvterm \
     libx11 \
     libxau \
     libxcb \
     libxdmcp \
     libxext \
+    libxml2 \
     libxrender \
     libyaml \
+    lima \
     little-cms2 \
+    llvm \
+    llvm@16 \
     lsd \
     lua \
     lua@5.1 \
+    luajit \
+    luv \
+    lz4 \
+    lzlib \
     lzo \
     m4 \
     macos-term-size \
     makedepend \
+    mbedtls \
+    mdcat \
+    meson \
     minikube \
     miniserve \
+    minizip \
+    mongodb-database-tools \
+    mosh \
     most \
     mpdecimal \
+    mpfr \
+    mpg123 \
+    msgpack \
     multitail \
     mycli \
+    nasm \
+    nats \
+    nats-server \
     ncurses \
+    neofetch \
+    neonctl \
+    neovim \
     netcat \
+    netcdf \
     netpbm \
     nettle \
     nghttp2 \
+    ninja \
     node \
-    node@12 \
     npth \
+    nspr \
+    nss \
+    numpy \
     nushell \
+    nvm \
     oniguruma \
+    opa \
+    openblas \
     opencore-amr \
     openexr \
     openjdk \
     openjpeg \
-    openssl@1.1 \
+    openldap \
+    openssl@3 \
     optipng \
     opus \
+    osm2pgrouting \
+    osm2pgsql \
     osmfilter \
+    osmium-tool \
     osmosis \
     p11-kit \
     p7zip \
@@ -165,101 +299,146 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     pcre2 \
     perl \
     pgcli \
+    pgrouting \
     pinentry \
     pip-completion \
     pixman \
     pkg-config \
+    pnpm \
     poetry \
+    poppler \
+    poppler-qt5 \
+    popt \
+    postgis \
     postgresql \
+    procs \
+    proj \
+    protobuf \
+    protobuf-c \
+    protobuf@21 \
+    psutils \
+    pycparser \
     pyenv \
+    pygments \
     python \
+    python-build \
+    python-certifi \
+    python-click \
+    python-cryptography \
+    python-distlib \
+    python-filelock \
+    python-markupsafe \
+    python-packaging \
+    python-platformdirs \
+    python-pyproject-hooks \
+    python-setuptools \
     python-tabulate \
+    python-typing-extensions \
     python3 \
-    python@3.9 \
+    pyyaml \
+    qemu \
+    qhull \
+    qt@5 \
+    rapidjson \
     rav1e \
+    re2 \
     readline \
     redis \
+    rekor-cli \
     ripgrep \
     rtmpdump \
     rubberband \
     ruby \
+    rust \
     rustup-init \
     s-lang \
     sbcl \
+    scorecard \
+    screenresolution \
     sdl2 \
+    sfcgal \
     shared-mime-info \
     shellcheck \
+    shfmt \
+    six \
     skaffold \
     snappy \
+    snyk \
+    source-highlight \
     speex \
+    speexdsp \
+    sphinx-doc \
+    spice-protocol \
     sqlite \
     srt \
     starship \
+    subversion \
+    svt-av1 \
     tcl-tk \
     tektoncd-cli \
-    terraform \
-    terraformer \
     tesseract \
+    texinfo \
     theora \
+    thrift \
+    tokei \
     tree \
+    tree-sitter \
+    trivy \
+    typst \
+    uchardet \
     unbound \
+    unibilium \
     unixodbc \
-    vagrant-completion \
-    vault \
+    uriparser \
+    utf8proc \
+    util-macros \
+    vde \
+    virtualenv \
     webp \
     wget \
     wireshark \
     x264 \
     x265 \
+    xerces-c \
     xmlto \
     xorgproto \
     xsv \
     xvid \
     xz \
+    yamllint \
     yarn \
+    z3 \
+    zellij \
     zeromq \
+    zig \
     zimg \
-    zlib 
-
+    zlib \
+    zola \
+    zstd
   
   # Install cask formulas.
   brew install --cask \
-    android-platform-tools \
-    android-sdk \
-    android-studio \
     angry-ip-scanner \
-    brave-browser \
     chromedriver \
-    dbeaver-community \
     deluge \
-    dropbox \
     firefox \
     flux \
-    freecad \
     gimp \
     google-chrome \
     iterm2 \
-    krita \
     libreoffice \
     mu-editor \
     ngrok \
-    postman \
     rar \
     rectangle \
-    sketchup \
     skype \
     slack \
     sweet-home3d \
-    the-battle-for-wesnoth \
-    time-out \
-    vagrant \
-    virtualbox \
     visual-studio-code \
     vlc \
-    xquartz
+    xquartz 
 
 
   # Clean up.
   brew cleanup
 fi
-
