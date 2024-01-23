@@ -4,6 +4,13 @@ set -euo pipefail
 # Define variables.
 : ${OSXR_BREW_FORCE_INSTALL:=0}
 
+# Add taps
+brew tap cargo-lambda/cargo-lambda
+brew tap sigstore/tap
+brew tap kdash-rs/kdash
+brew tap mongodb/brew
+brew tap snyk/tap
+
 # Install packages.
 if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew install \
@@ -15,8 +22,6 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     asciidoc \
     autoconf \
     automake \
-    avr-binutils \
-    avr-gcc@9 \
     avrdude \
     aws-sdk-cpp \
     awscli \
@@ -256,7 +261,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     multitail \
     mycli \
     nasm \
-    nats \
+    nats-server \
     nats-server \
     ncurses \
     neofetch \
@@ -421,7 +426,6 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     angry-ip-scanner \
     chromedriver \
     deluge \
-    firefox \
     flux \
     gimp \
     google-chrome \
