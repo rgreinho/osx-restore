@@ -14,12 +14,14 @@ brew tap snyk/tap
 # Install packages.
 if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew install \
+    abseil
     aom \
     apache-arrow \
     apr \
     apr-util \
     aribb24 \
     asciidoc \
+    atuin \
     autoconf \
     automake \
     avrdude \
@@ -34,12 +36,14 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     bottom \
     brew-cask-completion \
     brotli \
+    btop \
     bzip2 \
     c-ares \
     ca-certificates \
     cairo \
     capstone \
     cargo-lambda \
+    certifi \
     cffi \
     cfitsio \
     cgal \
@@ -52,6 +56,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     coreutils \
     cosign \
     crane \
+    cryptography \
     cue \
     cython \
     dav1d \
@@ -130,6 +135,8 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     hunspell \
     hurl \
     icu4c \
+    icu4c@75 \
+    icu4c@76 \
     ilmbase \
     imagemagick \
     imath \
@@ -165,6 +172,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     libbluray \
     libdap \
     libde265 \
+    libdeflate \
     libev \
     libevent \
     libexif \
@@ -174,6 +182,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     libgeotiff \
     libgit2 \
     libgit2@1.6 \
+    libgit2@1.7 \
     libgpg-error \
     libheif \
     libidn \
@@ -186,6 +195,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     libmicrohttpd \
     libmpc \
     libnghttp2 \
+    libnghttp3 \
     libogg \
     libomp \
     libpaper \
@@ -211,6 +221,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     libtasn1 \
     libtermkey \
     libtiff \
+    libtommath \
     libtool \
     libunibreak \
     libunistring \
@@ -234,6 +245,8 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     little-cms2 \
     llvm \
     llvm@16 \
+    llvm@17 \
+    lpeg \
     lsd \
     lua \
     lua@5.1 \
@@ -246,6 +259,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     macos-term-size \
     makedepend \
     mbedtls \
+    md4c \
     mdcat \
     meson \
     minikube \
@@ -288,6 +302,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     openjdk \
     openjpeg \
     openldap \
+    openssl@1.1 \
     openssl@3 \
     optipng \
     opus \
@@ -309,6 +324,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     pip-completion \
     pixman \
     pkg-config \
+    pmtiles \
     pnpm \
     poetry \
     poppler \
@@ -316,6 +332,8 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     popt \
     postgis \
     postgresql \
+    postgresql@14 \
+    postgresql@15 \
     procs \
     proj \
     protobuf \
@@ -334,11 +352,13 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     python-filelock \
     python-markupsafe \
     python-packaging \
+    python-pathspec \
     python-platformdirs \
     python-pyproject-hooks \
     python-setuptools \
     python-tabulate \
     python-typing-extensions \
+    python@3.13 \
     python3 \
     pyyaml \
     qemu \
@@ -346,6 +366,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     qt@5 \
     rapidjson \
     rav1e \
+    rclone \
     re2 \
     readline \
     redis \
@@ -355,6 +376,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     rubberband \
     ruby \
     rust \
+    rustup \
     rustup-init \
     s-lang \
     sbcl \
@@ -380,11 +402,15 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     subversion \
     svt-av1 \
     tcl-tk \
+    tcl-tk@8 \
     tektoncd-cli \
+    terraform \
+    terraformer \
     tesseract \
     texinfo \
     theora \
     thrift \
+    tippecanoe \
     tokei \
     tree \
     tree-sitter \
@@ -397,6 +423,9 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     uriparser \
     utf8proc \
     util-macros \
+    uv \
+    vagrant-completion \
+    vault \
     vde \
     virtualenv \
     webp \
@@ -412,37 +441,65 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     xz \
     yamllint \
     yarn \
+    yq \
     z3 \
     zellij \
+    zenith \
     zeromq \
     zig \
     zimg \
     zlib \
     zola \
     zstd
+
   
   # Install cask formulas.
   brew install --cask \
+    adobe-acrobat-reader \
     angry-ip-scanner \
+    balenaetcher \
     chromedriver \
-    deluge \
+    dbeaver-community \
+    dropbox \
+    fing-cli \
+    firefox \
     flux \
+    font-fira-code \
+    font-fira-code-nerd-font \
+    freecad \
     gimp \
     google-chrome \
+    inkscape \
     iterm2 \
+    keybase \
+    keymapp \
+    krita \
+    lens \
     libreoffice \
+    monitorcontrol \
     mu-editor \
     ngrok \
+    obs \
+    obsidian \
+    pgadmin4 \
+    postman \
+    qgis \
     rar \
     rectangle \
+    shotcut \
+    signal \
     skype \
     slack \
     sweet-home3d \
     visual-studio-code \
     vlc \
-    xquartz 
+    whatsapp \
+    zsa-wally \
+    zulip
+
 
 
   # Clean up.
   brew cleanup
 fi
+
