@@ -14,7 +14,7 @@ brew tap snyk/tap
 # Install packages.
 if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
   brew install \
-    abseil
+    abseil \
     aom \
     apache-arrow \
     apr \
@@ -44,6 +44,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     capstone \
     cargo-lambda \
     certifi \
+    certifi \
     cffi \
     cfitsio \
     cgal \
@@ -56,6 +57,7 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     coreutils \
     cosign \
     crane \
+    cryptography \
     cryptography \
     cue \
     cython \
@@ -159,7 +161,6 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     ko \
     krb5 \
     kubernetes-cli \
-    kubernetes-helm \
     kubie \
     lame \
     leptonica \
@@ -339,25 +340,17 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     protobuf \
     protobuf-c \
     protobuf@21 \
+    proton-drive \
+    protonvpn \
     psutils \
     pycparser \
     pyenv \
     pygments \
     python \
     python-build \
-    python-certifi \
-    python-click \
-    python-cryptography \
-    python-distlib \
-    python-filelock \
-    python-markupsafe \
     python-packaging \
-    python-pathspec \
-    python-platformdirs \
-    python-pyproject-hooks \
     python-setuptools \
     python-tabulate \
-    python-typing-extensions \
     python@3.13 \
     python3 \
     pyyaml \
@@ -377,7 +370,6 @@ if ! brew update || [ "${OSXR_BREW_FORCE_INSTALL}" -eq 1 ] ;then
     ruby \
     rust \
     rustup \
-    rustup-init \
     s-lang \
     sbcl \
     scorecard \
